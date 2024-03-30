@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Profile</title>
+    <link rel="stylesheet" href="/static/create_profile.css">
+</head>
+<script>
+    function displayPopup() {
+        alert("Placement Detail added successfully!");
+    }
+</script>
+
+<body>
+    <div class="box">
+        <h2 class="h3box">{{ title }}</h2>
+        <form action="{{ url_for('add_Placement') }}" method="post" enctype="multipart/form-data"
+            onsubmit="displayPopup()">
+
+            <label for="firstName" class="label-box">First Name of Student:</label>
+            <input type="text" placeholder="Enter First Name" value="{{user_profile[5]}}" id="firstName" name="firstName" class="input-box" required>
+
+            <label for="lastName" class="label-box">Last Name of Student:</label>
+            <input type="text" placeholder="Enter Last Name" value="{{user_profile[6]}}" id="lastName" name="lastName" class="input-box" required>
+
+            <label for="companyName" class="label-box">Company Name:</label>
+            <input type="text" placeholder="Enter Company Name" value="{{user_profile[3]}}" id="companyName" name="companyName" class="input-box" required>
+
+            <label for="Designation" class="label-box">Designation:</label>
+            <input type="text" placeholder="Enter Designation" value="{{user_profile[4]}}" id="Designation" name="Designation" class="input-box" required>
+
+
+            <label for="Placement_Medium">Placement Medium:</label>
+            <select id="Placement_Medium" name="Placement_Medium" class="input-box" required>
+                <option value="">Select Medium</option>
+                <option value="CDS" {% if user_profile[1]=='CDS' %}selected{% endif %}>CDS</option>
+                <option value="Non_CDS" {% if user_profile[1]=='Non_CDS' %}selected{% endif %}>Non CDS</option>
+            </select>
+
+            <label for="Salary">Salary</label>
+            <input type="text" placeholder="Enter Salary" value="{{user_profile[2]}}" name="Salary" id="Salary" placeholder="Enter Salary" class="input-box" required>
+
+
+            <input type="submit" value="{{footer}}" class="btn">
+        </form>
+    </div>
+</body>
+
+</html>
