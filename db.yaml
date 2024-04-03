@@ -1,6 +1,6 @@
 mysql_host: "127.0.0.1"
 mysql_user: "root"
-mysql_password: "rutu1440"
-mysql_db: "new5"
+mysql_password: "your_password"
+mysql_db: "Database_name"
 images_folder: "/Users/rutwikmore/Documents/A3/Placement-System/data_files/images"
 resume_folder: "/Users/rutwikmore/Documents/A3/Placement-System/data_files/resumes"
